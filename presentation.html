@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <meta name="author" content="">
+  <title>EHDEN Mega-Study – Μεταβολές στα πρότυπα χρήσης φαρμάκων με αναφερόμενες ελλείψεις</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-259c5fdee669044288a2f73b9f4ac579.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+  <script src="site_libs/datatables-binding-0.33/datatables.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+  <script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+  <link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+  <script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Μεταβολές στα πρότυπα χρήσης φαρμάκων με αναφερόμενες ελλείψεις</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section>
+<section id="η-μελέτη" class="title-slide slide level1 center">
+<h1>Η μελέτη</h1>
+<script>
+(function() {
+  var scale = 1, minScale = 0.5, maxScale = 10; var tx = 0, ty = 0; var dragging = false, lastX = 0, lastY = 0;
+
+  var overlay = document.createElement('div');
+  overlay.id = 'img-overlay';
+  overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:99999;overflow:hidden;cursor:grab;';
+
+  var img = document.createElement('img');
+  img.id = 'zoom-img';
+  img.draggable = false;
+  img.style.cssText = 'position:absolute;top:50%;left:50%;height:90vh;width:auto;max-width:none;display:block;transform-origin:center center;user-select:none;pointer-events:none;';
+
+  function applyTransform() {
+    img.style.transform = 'translate(calc(-50% + ' + tx + 'px), calc(-50% + ' + ty + 'px)) scale(' + scale + ')';
+  }
+
+  overlay.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    scale = Math.min(maxScale, Math.max(minScale, scale * (e.deltaY > 0 ? 0.9 : 1.1)));
+    applyTransform();
+  }, { passive: false, capture: true });
+
+  overlay.addEventListener('pointerdown', function(e) {
+    if (e.target === closeBtn) return;
+    dragging = true;
+    lastX = e.clientX; lastY = e.clientY;
+    overlay.style.cursor = 'grabbing';
+    overlay.setPointerCapture(e.pointerId);
+    e.stopPropagation();
+  }, true);
+
+  overlay.addEventListener('pointermove', function(e) {
+    if (!dragging) return;
+    tx += e.clientX - lastX; ty += e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    applyTransform();
+    e.stopPropagation();
+  }, true);
+
+  overlay.addEventListener('pointerup', function(e) {
+    dragging = false;
+    overlay.style.cursor = 'grab';
+    e.stopPropagation();
+  }, true);
+
+  ['mousedown','mousemove','mouseup','click',
+   'touchstart','touchmove','touchend',
+   'keydown','keyup'].forEach(function(t) {
+    overlay.addEventListener(t, function(e) {
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+    }, true);
+  });
+
+  var closeBtn = document.createElement('button');
+  closeBtn.textContent = '✕  Κλείσιμο';
+  closeBtn.style.cssText = 'position:absolute;top:16px;right:24px;background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.4);font-size:22px;cursor:pointer;border-radius:6px;padding:6px 18px;z-index:100000;';
+  closeBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    closeOverlay();
+  });
+
+  var hint = document.createElement('div');
+  hint.textContent = '🖱 Scroll to zoom · Drag to pan · Esc to close';
+  hint.style.cssText = 'position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.55);font-size:18px;pointer-events:none;white-space:nowrap;';
+
+  overlay.appendChild(img);
+  overlay.appendChild(closeBtn);
+  overlay.appendChild(hint);
+  document.body.appendChild(overlay);
+
+  function closeOverlay() {
+    overlay.style.display = 'none';
+    if (window.Reveal) Reveal.configure({ keyboard: true, touch: true });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.style.display !== 'none') {
+      e.stopPropagation();
+      e.preventDefault();
+      closeOverlay();
+    }
+  }, true);
+
+  window.openZoom = function(src) {
+    img.src = src;
+    scale = 1; tx = 0; ty = 0;
+    applyTransform();
+    overlay.style.display = 'block';
+    if (window.Reveal) Reveal.configure({ keyboard: false, touch: false });
+  };
+})();
+</script>
+
+</section>
+<section id="η-μελέτη-1" class="slide level2">
+<h2>Η μελέτη</h2>
+
+<img data-src="images/publication.png" class="r-stretch"></section>
+<section id="εισαγωγικά" class="slide level2">
+<h2>Εισαγωγικά</h2>
+<p><br>
+</p>
+<ul>
+<li>Οι ελλείψεις βασικών φαρμάκων αυξάνουν τη θνησιμότητα / τις ανεπιθύμητες ενέργειες.</li>
+<li>Ο ΠΟΥ θεωρεί το φαινόμενο μια σύνθετη παγκόσμια πρόκληση.</li>
+<li>Ο Ευρωπαϊκός Οργανισμός Φαρμάκων (EMA) διατηρεί δημόσιο κατάλογο φαρμάκων υπό επιτήρηση.</li>
+</ul>
+<p><br>
+</p>
+<blockquote>
+<p><strong>Στόχος</strong></p>
+<p>Η εκτίμηση της επίπτωσης (incidence), του επιπολασμού (prevalence) και των αλλαγών στη χρήση φαρμάκων που ανακοινώθηκαν σε έλλειψη από τον EMA.</p>
+</blockquote>
+</section>
+<section id="στόχοι-της-μελέτης" class="slide level2">
+<h2>Στόχοι της μελέτης</h2>
+<ul>
+<li>Διερεύνηση της επίπτωσης και του επιπολασμού περιόδου για φάρμακα με αναφερόμενες ελλείψεις ανά ημερολογιακό έτος.</li>
+<li>Περιγραφή των αλλαγών στο προφίλ των νέων και υφιστάμενων χρηστών.</li>
+<li>57 φάρμακα συνολικά (16 σε έλλειψη, 41 εναλλακτικά) για την περίοδο 2010–2024.</li>
+</ul>
+</section></section>
+<section>
+<section id="το-κοινό-μοντέλο-omop-cdm" class="title-slide slide level1 center">
+<h1>Το κοινό μοντέλο OMOP-CDM</h1>
+
+</section>
+<section id="γενικά" class="slide level2">
+<h2>Γενικά</h2>
+
+<img src="images/erd.jpg" onclick="openZoom('images/erd.jpg')" style="width:100%; cursor:zoom-in;" class="r-stretch"></section>
+<section id="εκτέλεση-μελετών" class="slide level2">
+<h2>Εκτέλεση μελετών</h2>
+<div style="width:80%; height:820px; overflow:hidden;">
+<p><img src="images/omop-analyses.png" style="width:100%; cursor:zoom-in;"></p>
+</div>
+</section>
+<section id="hades" class="slide level2">
+<h2>HADES</h2>
+<div style="width:80%; height:820px; overflow:hidden;">
+<p><iframe src="https://ohdsi.github.io/Hades/packages.html" style="
+      width: 166%;
+      height: 1366px;
+      border: none;
+      transform-origin: top left;
+    " loading="lazy"> </iframe></p>
+</div>
+</section></section>
+<section>
+<section id="ehden-mega-study" class="title-slide slide level1 center">
+<h1>EHDEN Mega-Study</h1>
+
+</section>
+<section id="ανάλυση" class="slide level2">
+<h2>Ανάλυση</h2>
+<ul>
+<li>Χρήση του OMOP-CDM μέσω του δικτύου EHDEN.</li>
+<li>Ο αναλυτικός κώδικας γράφτηκε κεντρικά (σε <code>R</code>).</li>
+<li>Ο κώδικας εκτελέστηκε <em>τοπικά</em> από κάθε συνεργάτη-κάτοχο δεδομένων.</li>
+<li>Μοιράστηκαν μόνο συγκεντρωτικά αποτελέσματα.</li>
+</ul>
+</section>
+<section id="δεδομένα" class="slide level2">
+<h2>Δεδομένα</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/database_attrition.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><em>Εκδήλωση ενδιαφέροντος:</em><br>
+82 συνεργάτες του δικτύου EHDEN, εκπροσωπώντας 92 βάσεις δεδομένων.</li>
+<li><em>Τελική ένταξη:</em><br>
+63 βάσεις δεδομένων πέρασαν επιτυχώς τους ελέγχους ποιότητας και δυνατότητας υλοποίησης (Feasibility).</li>
+<li><em>Γεωγραφική κατανομή:</em><br>
+18 Ευρωπαϊκές χώρες (συμπεριλαμβανομένης της Ελλάδας) και οι ΗΠΑ.</li>
+<li><em>Τύποι δεδομένων:</em><br>
+Πρωτοβάθμια φροντίδα, δευτεροβάθμια φροντίδα (νοσοκομεία), δεδομένα ασφαλιστικών αποζημιώσεων (claims) και μητρώα ασθενειών.</li>
+</ul>
+</div></div>
+</section>
+<section id="βάσεις-δεδομένων" class="slide level2">
+<h2>Βάσεις δεδομένων</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-a95993a196b9e6b08a48" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a95993a196b9e6b08a48">{"x":{"filter":"none","vertical":false,"data":[["ULSRA","ULSEDV","ULSGE","AP-HM","COMNET MODENA","IMASIS","POLIMI","AOUPR","ATENEA","AZGR","BARDENA","BDR","BZMC","CHA CAN","CHCZ","CPRD GOLD","CPRD Aurum","GMC","HULAFE","HUS","InGef RDB","INT","IPCI","ITF CDM","MAITT","UZA","MarketScan","NCR","OLVA MS","H12O","OPCRD","Clinformatics","PGH","P+","PRISIB","ReumaPT","SCIFI-PEARL","SIDIAP","PSSJD","SUCD","MEB KI","TAUH","THIN Belgium","THIN Spain","THIN France","THIN Italy","THIN Romania","THIN UK","UM DRESDEN","PCASF","VID CONSIGN","Viecuri"],["Unidade Local de Saúde da Região de Aveiro","Unidade Local de Saúde de Entre Douro e Vouga","Unidade Local de Saúde de Gaia e Espinho","L'Assistance Publique — Hôpitaux de Marseille","Modena Cancer Center of the AOU Policlinico","Hospital del Mar EHR Information System","Foundation IRCCS Ca' Granda Ospedale Maggiore Policlinico","University Hospital of Parma","Marina Salud SA (Hospital de Denia)","AZ Groeninge","BARDENA","Bulgarian Diabetes Register","Bnai Zion Medical Center","Charité Cancer","Clinical Hospital Center Zvezdara","Clinical Practice Research Datalink GOLD","Clinical Practice Research Datalink Aurum","Galilee Medical Center","Health Department Valencia-La Fe","Helsinki University Hospital","InGef Research Database","National Cancer Institute Milano DWH","The Integrated Primary Care Information","Istanbul University Istanbul Faculty of Medicine","Masinõppe ja AI toega teenused","University Hospital Antwerp","Merative MarketScan","Netherlands Cancer Registry","Onze-Lieve-Vrouwziekenhuis Aalst-Asse-Ninove","Hospital 12 Octubre","Optimum Patient Care Research Database","Optum Clinformatics","Papageorgiou General Hospital","IQVIA Pharmetrics+","PRISIB","Rheumatic Diseases Portuguese Registry","Swedish COVID-19 Investigation for Future Insights","The Information System for Research in Primary Care","Parc Sanitari Sant Joan de Déu","Semmelweis University Clinical Database","MEB KI","Tampere University Hospital","THIN Belgium","THIN Spain","THIN France","THIN Italy","THIN Romania","THIN UK","University Medicine Dresden","University of Turku (Prostate Cancer Registry SW Finland)","Valencia Health System Integrated Database","VieCuri Medical Center Rheumatology Database"],["2010 – 2023","2010 – 2023","2010 – 2023","2014 – 2024","2011 – 2023","2010 – 2024","2016 – 2024","2021 – 2022","2014 – 2024","2018 – 2022","2012 – 2023","2018 – 2018","2020 – 2024","2010 – 2023","2014 – 2024","2010 – 2023","2010 – 2023","2013 – 2024","2016 – 2023","2010 – 2024","2013 – 2023","2010 – 2024","2010 – 2023","2018 – 2021","2012 – 2019","2018 – 2023","2016 – 2022","2010 – 2023","2015 – 2024","2011 – 2021","2010 – 2024","2016 – 2022","2010 – 2023","2015 – 2023","2010 – 2023","2010 – 2022","2018 – 2023","2010 – 2023","2017 – 2023","2011 – 2022","2010 – 2023","2010 – 2023","2010 – 2023","2013 – 2023","2010 – 2023","2010 – 2023","2010 – 2023","2010 – 2023","2018 – 2023","2010 – 2022","2018 – 2021","2018 – 2023"],["Secondary","Secondary","Secondary","Secondary","Secondary","Secondary","Secondary","Secondary","Secondary","Secondary","EHR/Mixed","Registry","Secondary","Secondary","Secondary","Primary","Primary","Secondary","EHR/Mixed","Secondary","Claims/Mixed","Secondary","Primary","Secondary","Claims/Mixed","Secondary","Claims/Mixed","Registry","Secondary","Secondary","Primary","Claims/Mixed","Secondary","Claims/Mixed","EHR/Mixed","Registry","EHR/Mixed","Primary","Secondary","Secondary","EHR/Mixed","Secondary","Primary","Primary","Primary","Primary","Primary","Primary","Secondary","Secondary","EHR/Mixed","Secondary"],["Portugal","Portugal","Portugal","France","Italy","Spain","Italy","Italy","Spain","Belgium","Spain","Bulgaria","Israel","Germany","Serbia","UK","UK","Israel","Spain","Finland","Germany","Italy","Netherlands","Türkiye","Estonia","Belgium","USA","Netherlands","Belgium","Spain","UK","USA","Greece","USA","Spain","Portugal","Sweden","Spain","Spain","Hungary","Sweden","Finland","Belgium","Spain","France","Italy","Romania","UK","Germany","Finland","Spain","Netherlands"],["    514,014","    562,687","    728,107","  2,806,891","     89,211","  1,084,151","  1,447,865","    573,205","    356,723","     68,918","  1,972,272","    501,065","  1,075,585","    214,443","    618,992"," 17,267,137"," 44,851,398","    947,455","  2,371,896","    480,286","  9,111,064","  1,296,676","  2,817,331","    899,515","    149,364","     49,011","176,890,290","  2,514,888","     51,278","  2,891,589"," 25,953,068"," 77,234,542","  1,410,224","159,649,500","  2,498,289","     28,325"," 11,686,191","  8,553,325","    659,817","  2,075,672","  3,403,513","  2,878,001","  2,023,580","  1,896,031"," 25,949,765","  1,225,836","  1,135,795"," 10,977,326","    624,697","     22,232","  1,964,588","      4,918"]],"container":"<table class=\"compact stripe hover\">\n  <thead>\n    <tr>\n      <th>Ακρωνύμιο<\/th>\n      <th>Πλήρης ονομασία<\/th>\n      <th>Περίοδος<\/th>\n      <th>Τύπος<\/th>\n      <th>Χώρα<\/th>\n      <th>Πλήθος ασθενών<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":18,"scrollY":"800px","scrollCollapse":false,"dom":"ftp","language":{"search":"Search:"},"columnDefs":[{"className":"dt-right","targets":5},{"name":"Ακρωνύμιο","targets":0},{"name":"Πλήρης_Ονομασία","targets":1},{"name":"Περίοδος","targets":2},{"name":"Τύπος","targets":3},{"name":"Χώρα","targets":4},{"name":"Άτομα","targets":5}],"order":[[4,"asc"],[0,"asc"]],"initComplete":"function(settings, json) {\n      $(this.api().table().node()).css('font-size', '24px');\n    }","autoWidth":false,"orderClasses":false,"lengthMenu":[10,18,25,50,100]}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="γ.ν.-παπαγεωργίου-πγν" class="slide level2">
+<h2>Γ.Ν. Παπαγεωργίου (ΠΓΝ)</h2>
+<ul>
+<li><em>Η βάση δεδομένων:</em><br>
+Το ΠΓΝ είναι ένα από τα μεγαλύτερα δημόσια νοσοκομεία στη Βόρεια Ελλάδα / Κεντρική Μακεδονία.</li>
+<li><em>Το προφίλ των δεδομένων:</em><br>
+Καλύπτει ~1,5 εκατομμύριο ασθενείς, περιλαμβάνοντας κλινικά, διοικητικά και εργαστηριακά δεδομένα από το 2000.</li>
+</ul>
+</section>
+<section id="δυνατότητα-υλοποίησης-feasibility" class="slide level2">
+<h2>Δυνατότητα υλοποίησης (Feasibility)</h2>
+<ul>
+<li>Δοκιμαστικές εκτελέσεις (test runs) σε υποσύνολα δεδομένων.</li>
+<li>Απαραίτητη προϋπόθεση ήταν η καταγραφή <em>τουλάχιστον 100 ατόμων</em> με συνταγογράφηση/χορήγηση του φαρμάκου ενδιαφέροντος κατά την περίοδο της μελέτης.</li>
+<li>Χρησιμοποιήθηκαν εργαλεία αξιολόγησης της ποιότητας δεδομένων του OHDSI (<code>DataQualityDashboard</code>).</li>
+</ul>
+</section>
+<section id="επιτροπές-βιοηθικής" class="slide level2">
+<h2>Επιτροπές βιοηθικής</h2>
+<ul>
+<li>Σε τοπικό επίπεδο λόγω του αποκεντρωμένου σχεδιασμού.</li>
+<li>Οι συνεργάτες έλαβαν έγκριση από την τοπική Επιτροπή Ηθικής και Δεοντολογίας (IRB) ή επίσημη απαλλαγή βάσει της εθνικής νομοθεσίας τους.</li>
+</ul>
+</section>
+<section id="μελέτη-επίπτωσης-και-επιπολασμού" class="slide level2">
+<h2>Μελέτη επίπτωσης και επιπολασμού</h2>
+<ul>
+<li><em>Πληθυσμός:</em><br>
+Όλα τα άτομα στη βάση δεδομένων με τουλάχιστον 365 ημέρες διαθέσιμου ιατρικού ιστορικού.</li>
+<li><em>Περίοδος έκπλυσης (washout period):</em><br>
+Για τον υπολογισμό της επίπτωσης (νέοι χρήστες), εφαρμόστηκε περίοδος 30 ημερών χωρίς χρήση του φαρμάκου πριν τη νέα συνταγογράφηση.</li>
+<li><em>Παρονομαστής:</em><br>
+Υπολογίστηκε ως ανθρωπο-έτη σε κίνδυνο (person-years) για την επίπτωση, και ως πληθυσμός σε κίνδυνο για τον επιπολασμό.</li>
+</ul>
+</section>
+<section id="μελέτη-επίπτωσης" class="slide level2">
+<h2>Μελέτη επίπτωσης</h2>
+<p><br>
+</p>
+<div style="width:70%; margin: 0 auto;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/denominator_incidence.png"></p>
+<figcaption>Εικόνα ΧΧ: Συμβολή κάθε ασθενούς στον υπολογισμό του χρόνου σε κίνδυνο στη μελέτη επίπτωσης.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="μελέτη-χρήσης-φαρμάκων-drug-utilization-study---dus" class="slide level2">
+<h2>Μελέτη χρήσης φαρμάκων (Drug Utilization Study - DUS)</h2>
+<ul>
+<li>Νέοι (incident) και υφιστάμενοι (prevalent) χρήστες.</li>
+<li><strong>Χαρακτηρισμός σε Επίπεδο Ασθενούς:</strong>
+<ul>
+<li><em>Δημογραφικά:</em> Ηλικία και φύλο κατά την έναρξη.</li>
+<li><em>Ενδείξεις:</em> Εκτιμήθηκαν μέσω κωδικών διάγνωσης (SNOMED) στις 30 ημέρες πριν ή κατά την ημερομηνία έναρξης (index date).</li>
+<li><em>Διάρκεια Θεραπείας:</em> Υπολογίστηκε από τα δεδομένα χορήγησης/συνταγογράφησης.</li>
+<li><em>Δοσολογία:</em> Εκτιμώμενη ημερήσια δόση.</li>
+</ul></li>
+</ul>
+</section>
+<section id="ορισμός-στατιστικών-μετρικών" class="slide level2">
+<h2>9. Ορισμός Στατιστικών Μετρικών</h2>
+<ul>
+<li><strong>Ποσοστό Επίπτωσης (Incidence Rate):</strong>
+<ul>
+<li><em>Τύπος:</em> Νέοι Χρήστες / Ανθρωπο-έτη σε κίνδυνο (Person-years at risk).</li>
+<li><em>Αβεβαιότητα:</em> 95% Διαστήματα Εμπιστοσύνης (ΔΕ) με την ακριβή μέθοδο Poisson.</li>
+</ul></li>
+<li><strong>Επιπολασμός Περιόδου (Period Prevalence):</strong>
+<ul>
+<li><em>Τύπος:</em> Σύνολο Χρηστών / Πληθυσμός σε κίνδυνο μέσα σε ένα ημερολογιακό έτος.</li>
+<li><em>Αβεβαιότητα:</em> 95% Διωνυμικά (Binomial) Διαστήματα Εμπιστοσύνης.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p><em>Σημείωση ομιλητή (Focus στη στατιστική):</em> Αναφέρετε ότι επιλέξαμε την ακριβή μέθοδο Poisson υποθέτοντας απουσία υπερδιασποράς (no overdispersion) και ανεξαρτησία συμβάντων στο χρόνο, που είναι standard επιδημιολογική προσέγγιση για τέτοιου είδους μεγάλα σύνολα δεδομένων.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ορισμός-έλλειψης" class="slide level2">
+<h2>Ορισμός “έλλειψης”</h2>
+<ul>
+<li>Ορίσαμε ως “αντίκτυπο έλλειψης” μια <strong><span class="math inline">\(\ge\)</span> 33% σχετική μείωση</strong> στην επίπτωση ή τον επιπολασμό.</li>
+<li>Συγκρίναμε τη διάμεσο των 3 ετών <em>πριν</em> την ανακοίνωση του EMA με τη διάμεσο των 3 ετών <em>μετά</em> την ανακοίνωση.</li>
+</ul>
+</section>
+<section id="συνολικά-αποτελέσματα" class="slide level2">
+<h2>Συνολικά αποτελέσματα</h2>
+<ul>
+<li>15 από τα 16 φάρμακα είχαν δεδομένα επίπτωσης (όλα είχαν δεδομένα επιπολασμού).</li>
+<li>8 φάρμακα εμφάνισαν <span class="math inline">\(\ge\)</span> 33% πτώση στους νέους χρήστες (επίπτωση).</li>
+<li>9 φάρμακα εμφάνισαν <span class="math inline">\(\ge\)</span> 33% πτώση στους συνολικούς χρήστες (επιπολασμός).</li>
+<li>Τα φάρμακα που επηρεάστηκαν περισσότερο:
+<ul>
+<li>Βαρενικλίνη (διακοπή καπνίσματος)</li>
+<li>Αμοξικιλλίνη (αντιβιοτικό)</li>
+</ul></li>
+</ul>
+</section>
+<section id="συνολικά-αποτελέσματα-1" class="slide level2">
+<h2>Συνολικά αποτελέσματα</h2>
+
+<img src="images/overall.svg" onclick="openZoom('images/overall.svg')" style="width:100%; cursor:zoom-in;" class="r-stretch"></section>
+<section id="βαρενικλίνη" class="slide level2">
+<h2>Βαρενικλίνη</h2>
+<ul>
+<li>Ανακοίνωση του EMA (Ιούνιος 2021) λόγω ανίχνευσης προσμίξεων (Ν-νιτροζο-βαρενικλίνη).</li>
+<li>Η επίπτωση έπεσε <span class="math inline">\(\ge\)</span> 33% σε 12 βάσεις.</li>
+<li>Ο επιπολασμός έπεσε σε 13 βάσεις (επηρεάζοντας 16 από τις 18 χώρες).</li>
+<li>Μετρήσιμη, αντισταθμιστική αύξηση στη συχνότητα χρήσης θεραπειών υποκατάστασης νικοτίνης (εναλλακτικά) σε αρκετές βάσεις (π.χ. Ολλανδία, Βέλγιο).</li>
+</ul>
+</section>
+<section id="βαρενικλίνη-επίπτωση" class="slide level2">
+<h2>Βαρενικλίνη (επίπτωση)</h2>
+
+<img src="images/varenicline.png" onclick="openZoom('images/varenicline.png')" style="width:100%; cursor:zoom-in;" class="r-stretch"></section>
+<section id="αλλαγές-στη-διάρκεια-θεραπείας" class="slide level2">
+<h2>Αλλαγές στη διάρκεια θεραπείας</h2>
+<ul>
+<li>Η αθροιστική δόση έπεσε από διάμεσο 84 mg (2020) στα 28 mg (2023) στην πρωτοβάθμια φροντίδα (Ολλανδία).</li>
+<li><strong>Διάρκεια Θεραπείας:</strong> Στη Φινλανδία (από 104 ημέρες σε μόλις 1) και στο Βέλγιο (από 71 ημέρες στις 30).</li>
+</ul>
+</section>
+<section id="αμοξικιλλίνη" class="slide level2">
+<h2>Αμοξικιλλίνη</h2>
+<ul>
+<li>Έλλειψη (Ιανουάριος 2023) λόγω καθυστερήσεων στην παραγωγή + έξαρσης αναπνευστικών λοιμώξεων μετά την πανδημία COVID-19.</li>
+<li>Ο επιπολασμός έπεσε στο 55% των βάσεων πρωτοβάθμιας φροντίδας και περίπου στο 45% των νοσοκομειακών.</li>
+<li>Παρατηρήσαμε τοπικές αυξήσεις σε εναλλακτικά αντιβιοτικά όπως η Αζιθρομυκίνη, κυρίως στη δευτεροβάθμια φροντίδα.</li>
+</ul>
+</section>
+<section id="αμοξικιλλίνη-επιπολασμός" class="slide level2">
+<h2>Αμοξικιλλίνη (επιπολασμός)</h2>
+
+<img src="images/amoxicilin.png" onclick="openZoom('images/amoxicilin.png')" style="width:100%; cursor:zoom-in;" class="r-stretch"></section>
+<section id="σαριλουμάμπη" class="slide level2">
+<h2>Σαριλουμάμπη</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Θεραπεία για τη Ρευματοειδή Αρθρίτιδα (ΡΑ).</li>
+<li>Απότομη πτώση στη χρήση του για ΡΑ και ταυτόχρονη αύξηση στο ποσοστό των <em>ανδρών</em> χρηστών.</li>
+<li>Eκτός ένδειξης (off-label) χρήση για σοβαρή νόσηση από COVID-19.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="images/sarilumab-1.png" onclick="openZoom('images/sarilumab-1.png')" style="width:100%; cursor:zoom-in;"></p>
+</div></div>
+</section>
+<section id="αποτελέσματα-ελλάδας" class="slide level2">
+<h2>Αποτελέσματα Ελλάδας</h2>
+<ul>
+<li>Στο ΠΓΝ αξιολογήθηκαν 3 φάρμακα (αμοξικιλλίνη, τιγεκυκλίνη και αλτεπλάση)</li>
+<li><strong>Αμοξικιλλίνη:</strong> ΔΕΝ ξεπεράστηκε το κατώφλι της μείωσης κατά 33%</li>
+<li><strong>Τιγεκυκλίνη:</strong> Εμφάνισε μείωση <span class="math inline">\(\ge\)</span> 33%.</li>
+<li><strong>Αλτεπλάση:</strong> ΔΕΝ ξεπεράστηκε το κατώφλι της μείωσης κατά 33%</li>
+</ul>
+</section>
+<section id="περιορισμοί" class="slide level2">
+<h2>Περιορισμοί</h2>
+<ul>
+<li>Συνταγογράφηση δεν σημαίνει κατανάλωση από τον ασθενή.</li>
+<li>Μη συνταγογραφούμενα εναλλακτικά (π.χ. επιθέματα νικοτίνης) υποεκπροσωπούνται.</li>
+<li>Χρησιμοποιήσαμε κωδικούς SNOMED ως δείκτες για την ένδειξη χορήγησης των φαρμάκων.</li>
+<li>Η επίδραση της πανδημίας COVID-19 .</li>
+</ul>
+</section>
+<section id="συμπεράσματα" class="slide level2">
+<h2>Συμπεράσματα</h2>
+<ol type="1">
+<li>Οι ελλείψεις φαρμάκων διαταράσσουν ποσοτικά τη φροντίδα των ασθενών, οδηγώντας σε μετρήσιμες πτώσεις (επίπτωση/επιπολασμός) και αναγκάζοντας αλλαγές στη δόση, τη διάρκεια και τη χρήση εναλλακτικών θεραπειών.</li>
+<li>Τυποποιημένα μοντέλα (όπως το OMOP-CDM) μας επιτρέπουν να παρακολουθούμε παγκόσμιες κρίσεις υγείας με ασφάλεια και διαφάνεια.</li>
+</ol>
+</section></section>
+<section id="ευχαριστώ" class="title-slide slide level1 center">
+<h1>Ευχαριστώ</h1>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/inab_logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
